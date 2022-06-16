@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: petclinic-pipeline-
+spec:
+  pipelineRef:
+    name: petclinic-pipeline
+  workspaces:
+    - name: source
+      persistentVolumeClaim:
+        claimName: source-workspace
